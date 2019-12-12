@@ -198,7 +198,7 @@ void sayHello() {
 
 ## Varargs (...)
 
-A vegades necessitem una funció a la que, en el moment de definir-la, no sabem encara quants arguments li necessitarem passar. Inclús a vegades necessitarem una funció que, en cridar-la, a vegades li necessitarem passar més arguments, i d'altres vegades menys.
+A vegades necessitem una funció a la que, en el moment de definir-la, no sabem encara quants arguments li necessitarem passar. És a dir, podem necessitar una funció que, en cridar-la, a vegades li vulguem passar més arguments, i d'altres vegades menys.
 
 Per exemple:
 
