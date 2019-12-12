@@ -167,6 +167,36 @@ La signatura d'una funció està composta de:
   
   Tota funció abstracta té pendent de completar-se amb el **COS DE LA FUNCIÓ** (bloc de codi de la funció amb les seves instruccions). Quan un programador escriu el cos d'una funció abstracta, diem que el programador està **IMPLEMENTANT** la funció (respectant la seva signatura).
   
-  
+## Function descriptor
+
+El descriptor d'una funció ens indica quins són els tipus de dades dels paràmetres d'entrada (si n'hi ha), i quin és el tipus de dada del valor de retorn (si n'hi ha).
+
+_Exemples:_
+
+Els següents exemples són els descriptors de funcions corresponents a les signatures de funcions posades com a exemples en l'apartat anterior:
+
+```
+int[] -> int
+char[] -> void
+double[] -> boolean
+(double, double, int, int) -> double
+```
+
+El següent exemple és el descriptor d'una funció que no té cap paràmetre d'entrada i que no retorna res:
+
+```
+() -> void
+```
+
+Un exemple d'una funció que compleix aquest descriptor, és la següent funció:
+
+```
+void sayHello() {
+   print("Hello!");
+}
+```
+
+
+
 
 
