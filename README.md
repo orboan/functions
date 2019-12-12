@@ -60,9 +60,9 @@ _L'opció_ **a** _és totalment desaconsellable. Sempre optarem per a retornar e
 
 Una funció pot (o no) modificar l'estat del seu entorn.
 
-Entenem entorn qualsevol àmbit de variables extern al bloc de codi de la funció.
+Entenem per **entorn** qualsevol àmbit de variables extern al bloc de codi de la funció.
 
-Entenem per estat el conjunt de valors que tenen assignats les diferents variables d'àmbits externs a la funció. _Quan almenys una variable d'àmbit extern a la funció canvia de valor, direm que **l'entorn de la funció ha canviat d'estat**._
+Entenem per **estat** el conjunt de valors que tenen assignats les diferents variables d'àmbits externs a la funció. _Quan almenys una variable d'àmbit extern a la funció canvia de valor, direm que **l'entorn de la funció ha canviat d'estat**._
 
 _A tenir en compte:_ 
 
