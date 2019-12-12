@@ -33,9 +33,9 @@ _A tenir en compte:_
 
 Per exemple, una funció que calcula el quadrat d'un nombre enter, pot obtenir el valor del nombre enter del qual vol calcular-ne el seu quadrat de dues maneres:
 
-a. Llegint el valor d'una variable d'àmbit global, o d'àmbit més extern.
+  a. Llegint el valor d'una variable d'àmbit global, o d'àmbit més extern.
 
-b. Llegint el valor que se li ha passat com a argument, i que correspon a un paràmetre, quan s'ha cridat la funció.
+  b. Llegint el valor que se li ha passat com a argument, i que correspon a un paràmetre, quan s'ha cridat la funció.
 
 _L'opció_ **a** _és totalment desaconsellable. Sempre optarem per usar els paràmetres d'entrada._
 
@@ -49,12 +49,24 @@ _A tenir en compte:_
 
 Per exemple, una funció que calcula el quadrat d'un nombre enter, obtindrà com a resultat el quadrat d'un nombre enter, i aquest resultat el pot guardar en: 
 
-a. Una variable d'àmbit global, o d'àmbit més extern, a la que li assignarà el resultat obtingut.
+  a. Una variable d'àmbit global, o d'àmbit més extern, a la que li assignarà el resultat obtingut.
 
-b. Retornant el resultat obtingut com a valor de retorn de la funció.
+  b. Retornant el resultat obtingut com a valor de retorn de la funció.
 
 _L'opció_ **a** _és totalment desaconsellable. Sempre optarem per a retornar el valor del resultat obtingut._
 
+
+## 3. Les funcions poden modificar l'estat de l'entorn.
+
+Una funció pot (o no) modificar l'estat del seu entorn.
+
+Entenem entorn qualsevol àmbit de variables extern al bloc de codi de la funció.
+
+Entenem per estat el conjunt de valors que tenen assignats les diferents variables d'àmbits externs a la funció. _Quan almenys una variable d'àmbit extern a la funció canvia de valor, direm que **l'entorn de la funció ha canviat d'estat**._
+
+_A tenir en compte:_ 
+
+**No és aconsellable que les variables canvïin l'estat del seu entorn.** Una programació ben dissenyada evita que això passi.
 
 
 
