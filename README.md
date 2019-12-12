@@ -80,6 +80,19 @@ Si una variable local, dins d'una funció, té el mateix nom que una variable d'
 
 ## 5. Les variable locals dins d'una funció no tenen valors per defecte. Per tant, és obligatori assignar-lis un valor.
 
+_Exemple_:
+
+El següent codi és vàlid en un àmbit extern a una funció:
+
+```
+int n;
+int square = n*n;
+```
+
+Aquest mateix codi, però, llençarà una excepció (error) si s'executa dins d'una funció.
+
+**Explicació:** en l'àmbit extern, la variable n tindrà assignat un valor per defecte, i quan aquesta variable s'usa en el l'expressió _n*n_ se li aplicarà aquest valor per defecte. En canvi, dins d'una funció les variables locals no tenen valors per defecte, per tant en intentar avaluar _n*n_ no podrà (retornant un error).
+
 
 
 
