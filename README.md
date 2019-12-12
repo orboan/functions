@@ -66,7 +66,20 @@ Entenem per **estat** el conjunt de valors que tenen assignats les diferents var
 
 _A tenir en compte:_ 
 
-**No és aconsellable que les variables canvïin l'estat del seu entorn.** Una programació ben dissenyada evita que això passi.
+**No és aconsellable que les funcions canvïin l'estat del seu entorn.** Una programació ben dissenyada evita que això passi.
+
+## 4. Totes les variables declarades dins del bloc de codi de la funció són variables locals i moren quan el bloc de codi es tanca.
+
+Dins del bloc de codi d'una funció es poden declarar, inicialitzar i usar tantes variable com sigui necessari, que existiran només dins d'aquest àmbit local, és a dir, quan el bloc de codi de la funció es tanqui o quan es retorni un valor, totes aquestes variables locals deixaran d'existir i ja no seran accessibles.
+
+_A tenir en compte:_ 
+
+**Les variables declarades com a paràmetres de la funció són variables locals de la funció.**
+
+Si una variable local, dins d'una funció, té el mateix nom que una variable d'àmbit extern a la funció, la local farà **shadowing** sobre l'externa o global.
+
+## 5. Les variable locals dins d'una funció no tenen valors per defecte. Per tant, és obligatori assignar-lis un valor.
+
 
 
 
