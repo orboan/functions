@@ -115,7 +115,7 @@ _Exemples de funcions pures:_
 
 ```
 Function<Integer, Integer> f = x -> x*x
-BiFunction<Double, Double, Double> g = (x, y) -> 2*x + y
+BiFunction<Double, Double, Double> g = (x, y) -> 2.0*x + y
 Supplier<String> s = () -> "This is amazing!"
 ```
 
@@ -135,6 +135,38 @@ novaEdat = newAge(2); //Retorna 27
 
 _Explicació:_ la funció newAge no és pura, doncs per al mateix valor d'entrada (2) no retorna sempre el mateix resultat o valor de sortida (en el primer cas retorna 25, i en el segon, 27).
 
+## Signatura d'una funció
 
+La signatura d'una funció està composta de:
+
+   a. El nom de la funció
+   b. Els seus paràmetres d'entrada (nombre, ordre, tipus de dada i nom)
+   
+ El valor de retorn d'una funció **no forma part de la seva signatura** tot i que per costum s'hi inclogui habitualment.
+ 
+ _Exemples:_
+ 
+ ```
+ int findMax(int[] array);
+ void printMessage(char[] letters);
+ boolean isEmpty(double[] array);
+ double getPolynomialZerosDivision(double x, double y, int a, int b);
+ ```
+ 
+ En el primer cas, la funció findMax espera rebre com a argument el valor d'un array d'enters, i retornarà un enter.
+ 
+ En el segon cas, la funció printMessage espera rebre com a argument el valor d'un array de chars, i no retornarà res (doncs no calcula cap resultat, simplement imprimeix per pantalla).
+ 
+ En el tercer cas, la funció isEmpty espera rebre com a argument un array de doubles, i retornarà com a resultat un booleà (true o false).
+ 
+ En el quart exemple, la funció getPolynomialZeros espera rebre com a arguments els valors (i en aquest ordre) d'un double, d'un altre double, d'un int i d'un altre int. Retornarà com a resultat un valor de tipus double.
+ 
+ _A tenir en compte:_
+ 
+  Les funcions de les quals només s'escriu la seva signatura (amb el tipus de dada de retorn) i es finalitza amb un punt i coma (;) s'anomenen **FUNCIONS ABSTRACTES**.
+  
+  Tota funció abstracta té pendent de completar-se amb el **COS DE LA FUNCIÓ** (bloc de codi de la funció amb les seves instruccions). Quan un programador escriu el cos d'una funció abstracta, diem que el programador està **IMPLEMENTANT** la funció (respectant la seva signatura).
+  
+  
 
 
