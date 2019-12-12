@@ -196,13 +196,36 @@ void sayHello() {
 }
 ```
 
-## Varargs
+## Varargs (...)
 
 A vegades necessitem una funció a la que, en el moment de definir-la, no sabem encara quants arguments li necessitarem passar. Inclús a vegades necessitarem una funció que, en cridar-la, a vegades li necessitarem passar més arguments, i d'altres vegades menys.
 
 Per exemple:
 
-Volem crear una funció que ens calculi el valor 
+Volem crear una funció que ens calculi la mitjana de notes d'un grup d'alumnes, però la quantitat d'alumnes pot canviar depenent de la classe:
+
+```
+double getAverage(double ... qualifications) {
+   int length = qualifications.length;
+   double suma = 0;
+   for (int i = 0; i < length; i++){
+      suma += qualifications[i];
+   }
+   return suma / length;
+}
+```
+
+Exemples de com podem cridar aquesta funció:
+
+```
+//Per a una classe de 4 alumnes
+double average = getAverage(5.0, 6.5, 7.0, 3.8); 
+
+//Per a una classe de 8 alumnes
+double average = getAverage(5.0, 6.5, 7.3, 2.6, 6.2, 5.4, 7.0, 8.2);
+```
+
+La notació dels paràmetres corresponents als _varargs_ és la de posar el tipus de dada, tres punt suspensius (...) i el nom de la variable. **Internament, dins del cos de la funció, la variable del paràmetre serà considerada com un ARRAY de mida el número total d'arguments que se li passin quan es crida la funció.**
 
 
 ## Predicats
