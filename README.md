@@ -322,3 +322,52 @@ int calculateSumByStep(int[] numbers, int step) {
 _A tenir en compte:_
 
 Quan hi ha overloading de funcions, no es sobreescriu cap funció, és a dir, **totes les diferents versions de la funció estan disponibles**. Java escollirà la versió apropiada a executar segons els tipus de dades i nombre i/o ordre dels arguments que es passen en cridar la funció.
+
+## Regles per a escriure bones funcions
+
+1. **Una funció ha de fer una sola cosa.**
+
+Per exemple, calcular el factorial. Si la funció que calcula el factorial, a més, ha de llegir el número enter del qual n'ha de fer el càlcul (des d'una base de dades o un fitxer, o llegir-lo com a valor introduit per un usuari des d'un formulari) i/o, a més, ha d'imprimir el resultat per pantalla o guardar-lo en algun lloc (base de dades, fitxers...), tenim una funció **mal dissenyada**, doncs no fa **només** 1 cosa.
+
+En aquest cas, serien altres funcions les que s'encarregarien d'obtenir el valor int del qual es vol fer el càlcul del factorial, i serien altres funcions les que s'encarregarien de guardar el resultat obtingut en algun lloc o d'imprimir-lo per pantalla.
+
+2. **Cal no usar més de 3 o 4 paràmetres.**
+
+Tenir molts paràmetres és un senyal que la funció fa més d'una cosa. A més, serà difícil recordar per part del programador el significat de masses paràmetres usats al mateix temps.
+
+3. **Cal seguir els convenis.**
+
+Cal seguir els convenis en els noms de les funcions, és a dir:
+   * Els noms han de ser autodescriptius.
+   * Poden ser tant llargs com es necessiti.
+   * Escrits en minúscula. Només posem en Majúscula la primera lletra de la segona i successives paraules, en cas que el nom estigui compost de dos o més paraules.
+   * No usem caràcters separadors.
+   * Usem paraules de l'idioma anglès.
+   * Els noms dels predicats sempre tenen el prefix _is_ o _has_.
+   
+ _Quins dels següents noms segueixen el conveni de noms de funcions en Java?_
+ 
+ ```
+ 1. void getCloser();
+ 2. boolean is_Mine(char c);
+ 3. byte CheckBytes(byte[] b);
+ 4. int[] getMyFavoritenumbers();
+ 5. void prt("Hello");
+ 6. boolean tryEquals(char c);
+ ```
+ 
+ Només l'exemple 1 segueix el conveni.
+ 
+ L'exemple 2 és incorrecte perquè té un separador entre paraules (_ en aquest cas).
+ 
+ L'exemple 3 és incorrecte perquè comença amb majúscula.
+ 
+ L'exemple 4 és incorrecte perquè la paraula _numbers_ comença en minúscula.
+ 
+ L'exemple 5 és incorrecte, perquè del nom de la funció no es pot saber què fa la funció (què vol dir _prt_?, _prt_ no és una paraula de l'idioma anglès).
+ 
+ L'exemple 6 és incorrecte perquè retorna un booleà (és un predicat) i el nom de la funció no comença per _is_ o _has_.
+ 
+ #### Per altra banda, cal seguir el conveni de la indentació, per a fer el codi més llegible: el contingut de cada bloc de codi ha d'estar indentat.
+ 
+ 
