@@ -235,7 +235,48 @@ Els predicats són funcions pures que compleixen amb el següent descriptor:
 ```
 (T...) -> boolean
 ```
-essent T
+essent T qualsevol tipus de dada, i ... és la notació varags, de manera que podem llegir aquest descriptor com: és un predicat tota funció que rebi com a paràmetres d'entrada qualsevol número de paràmetre de qualsevol tipus de dada, però que **sempre** retorna un booleà.
+
+## Overriding de funcions
+
+Sempre podem definir una nova funció que tingui la mateixa signatura que una altra prèviament definida (mateix nom de funció i mateix nombre, ordre i tipus de dada de paràmetres). Per exemple, suposem que tenim definida la següent funció:
+
+```
+int calculateSum(int[] elements) {
+   int sum = 0:
+   for(int i = 0; i < elements.length; i++){
+       sum += elements[i];
+   }
+   return sum;
+}
+```
+
+Però ens demanen, posteriorment, que aquesta funció imprimeixi per pantalla la suma acumulada en cada iteració. Per tant, necessitarem tornar a escriure-la:
+
+```
+int calculateSum(int[] elements) {
+   int sum = 0:
+   for(int i = 0; i < elements.length; i++){
+       sum += elements[i];
+       println(sum);
+   }
+   return sum;
+}
+```
+
+Quan això passa, diem que la nova funció calculateSum fa un **overriding** (sobreescriu) de l'anterior (amb la mateixa signatura), de manera que l'anterior es perd, i és la darrera definició la que és ara vàlida.
+
+_A tenir en compte:_
+
+Cal tenir en compte que els noms dels paràmetres i el tipus de dada de retorn són irrellevants. Perquè l'overring tingui efecte, només cal que el nom de la funció sigui igual que el d'aquella que volem sobreescriure, i també el tipus de dada dels paràmetres i l'ordre en què apareixen a la signatura de la funció. Per exemple, la següent funció també farà un overriding de l'anterior:
+
+```
+long calculateSum(int[] numbers) {
+   ...
+   return longVar;
+}
+```
+
 
 
 
