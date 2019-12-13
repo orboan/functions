@@ -1,6 +1,8 @@
 # PROGRAMMING
 # Functions
 
+Author: Oriol Boix Anfosso (orboan@ilg.cat) 
+
 Les funcions són blocs de codi que executen un conjunt d'instruccions, amb les següents característiques:
 
 1. Poden (o no) rebre valors d'entrada, que seran processats dins del bloc de codi.
