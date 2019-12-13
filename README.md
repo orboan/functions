@@ -237,7 +237,7 @@ Els predicats són funcions pures que compleixen amb el següent descriptor:
 ```
 essent T qualsevol tipus de dada, i ... és la notació varags, de manera que podem llegir aquest descriptor com: és un predicat tota funció que rebi com a paràmetres d'entrada qualsevol número de paràmetre de qualsevol tipus de dada, però que **sempre** retorna un booleà.
 
-## Overriding de funcions
+## Function Overriding
 
 Sempre podem definir una nova funció que tingui la mateixa signatura que una altra prèviament definida (mateix nom de funció i mateix nombre, ordre i tipus de dada de paràmetres). Per exemple, suposem que tenim definida la següent funció:
 
@@ -277,7 +277,48 @@ long calculateSum(int[] numbers) {
 }
 ```
 
+## Function Overloading
 
+La sobrecàrrega de funcions (en anglès: Function Overloading) té lloc quan definim una funció que té el mateix nom que una altra funció que s'ha creat anteriorment, però que té una signatura diferent.
 
+És a dir, quan la nova funció tot i anomenar-se igual que una d'anterior ja existent, té diferents paràmetres (en nombre i / o en tipus de dada) que l'anterior funció.
 
+Per exemple:
 
+```
+long calculateSum(int[] numbers) {
+   ...
+   return longVar;
+}
+```
+
+La següent funció és una sobrecàrrega (overloading) d'aquesta darrera funció (calculateSum):
+
+```
+long calculateSum(long[] numbers) {
+   ...
+   return longVar;
+}
+```
+
+Un altre exemple. Tenim:
+
+```
+int calculateSumByStep(int[] numbers) {
+   int step = 1;
+   ...
+   return intVar;
+}
+```
+
+La següent funció és una sobrecàrrega de l'anterior:
+```
+int calculateSumByStep(int[] numbers, int step) {
+   ...
+   return intVar;
+}
+```
+
+_A tenir en compte:_
+
+Quan hi ha overloading de funcions, no es sobreescriu cap funció, és a dir, **totes les diferents versions de la funció estan disponibles**. Java escollirà la versió apropiada a executar segons els tipus de dades i nombre i/o ordre dels arguments que es passen en cridar la funció.
