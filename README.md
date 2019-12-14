@@ -372,4 +372,30 @@ Cal seguir els convenis en els noms de les funcions, és a dir:
  
  #### Per altra banda, cal seguir el conveni de la indentació, per a fer el codi més llegible: el contingut de cada bloc de codi ha d'estar indentat.
  
+ # EXEMPLES
  
+ 1. Crea una funció que rebi un array d'enters, i retorni un altre array d'enters que contingui els números parells trobats a l'array d'entrada.
+ 
+ ```
+ int[] getEvenNumbersArray(int[] numbers){
+   int newArraySize = 0;
+   for(int i = 0; i < numbers.length; i++) {
+      if(numbers[i] % 2 == 0) {
+         newArraySize++;
+      }
+   }
+   int[] evenNumbersArray = new int[newArraySize];
+   if(newArraySize != 0){
+      int i = 0, j = 0;
+      while(i < numbers.length) {
+         if(numbers[i] % 2 == 0) {
+            evenNumbersArray[j] = numbers[i];
+            j++;
+         }
+         i++;
+      }
+   }
+   return evenNumbersArray;
+}
+```
+
