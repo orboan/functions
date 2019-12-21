@@ -399,3 +399,44 @@ Cal seguir els convenis en els noms de les funcions, és a dir:
 }
 ```
 
+_Explicació:_
+
+Com que els arrays, a Java, són de mida fixa, caldrà primer esbrinar quina és la mida de l'array a retornar per la funció. La mida d'aquest array a retornar serà el número (quantitat) de nombres parells que hi ha dins de l'array que es passarà com a argument en cridar la funció.
+
+Això ho calculem a la primera part del codi del cos de la funció. Creem una variable local `newArraySize` que guardarà la mida de l'array a retornar, és a dir, la quantitat d'enters parells que hi ha dins de l'array d'entrada.
+
+**Recorrem** l'array d'entrada i, a cada iteració del bucle, anem sumant 1 a la variable `newArraySize` si l'enter (valor de l'array d'entrada donat per `numbers[i]`) que estem avaluant en el condicional, és parell. Si no és parell, no fem res i seguim a la següent iteració.
+
+```
+   int newArraySize = 0;
+   for(int i = 0; i < numbers.length; i++) {
+      if(numbers[i] % 2 == 0) {
+         newArraySize++;
+      }
+   }
+```
+
+Un cop sabem quants nombres parells haurà de contenir l'array a retornar, creem l'array a retornar:
+
+```
+int[] evenNumbersArray = new int[newArraySize];
+```
+
+Si la mida de l'array creat és 0 (és a dir, no em trobat cap número parell a l'array d'entrada) llavors no cal fer res més i retornarem un array buit (no s'executa el codi dins del bloc de codi de _`if(newArraySize != 0)`_ i es passa directament a la instrucció `return`). 
+
+En cas que la mida de l'array sigui diferent de 0, caldrà anar guardant a l'array a retornar tots els nombres parells que hi ha a `numbers`.
+
+Per tant, cal recorrer de nou l'array d'entrada `numbers` (usant l'índex _i_) i si el número que hi trobem (amb `numbers[i]`) és parell, llavors guardarem aquest valor a dins de l'array a retornar, que es va recorrent amb l'índex _j_. L'índex _j_ només avança (_j++_) quan es troba un número parell i es guarda a l'array a retornar.
+
+```
+   if(newArraySize != 0){
+      int i = 0, j = 0;
+      while(i < numbers.length) {
+         if(numbers[i] % 2 == 0) {
+            evenNumbersArray[j] = numbers[i];
+            j++;
+         }
+         i++;
+      }
+   }
+```
